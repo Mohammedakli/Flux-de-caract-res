@@ -4,7 +4,9 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-/*exercice*/  
+import java.nio.file.Path;
+import java.nio.file.Paths;
+/*Flux exercice*/  
 public class Flux {
 
 	public static void main(String[] args) throws IOException {
@@ -15,7 +17,8 @@ public class Flux {
 		while((c = input.read()) != -1) {
 			output.write(c);
 		}
-		
+		Path example = Paths.get("input.txt").toAbsolutePath(); 
+		System.out.println(example.getParent());
 		input.close();
 		output.close();
 	}

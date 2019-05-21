@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/*exercice*/  
 public class Flux {
 
 	public static void main(String[] args) throws IOException {

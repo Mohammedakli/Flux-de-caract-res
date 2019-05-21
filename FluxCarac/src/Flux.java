@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,16 +9,15 @@ public class Flux {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		File in = new File("input.txt");
-		File out = new File("output.txt");
-		FileReader reader = new FileReader(in);
-		FileWriter writer = new FileWriter(out, true);
+		FileInputStream input = new FileInputStream("input.txt");
+		FileOutputStream output = new FileOutputStream("output.txt", true);
 		int c;
-		while((c = reader.read()) != -1) {
-			writer.write(c);
+		while((c = input.read()) != -1) {
+			output.write(c);
 		}
-		reader.close();
-		writer.close();
+		
+		input.close();
+		output.close();
 	}
 
 }

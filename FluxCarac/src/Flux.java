@@ -10,7 +10,7 @@ public class Flux {
 		File in = new File("input.txt");
 		File out = new File("output.txt");
 		FileReader reader = new FileReader(in);
-		FileWriter writer = new FileWriter(out);
+		FileWriter writer = new FileWriter(out, true);
 		int c;
 		while((c = reader.read()) != -1) {
 			writer.write(c);

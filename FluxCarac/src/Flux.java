@@ -57,6 +57,10 @@ public class Flux {
 			}
 		}
 		
+		for (int i = 0; i < tab.length; i++) {
+			System.out.println(tab[i]);
+		}
+		
 		FileOutputStream output = new FileOutputStream("doublons.txt", true);
 		for(int i = 0; i < tab.length; i++) {
 			byte[] c = tab[i].getBytes();

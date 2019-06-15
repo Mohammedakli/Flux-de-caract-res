@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -22,7 +23,7 @@ public class Flux {
 		input.close();
 		output.close();*/
 		
-		System.out.println(args[0]);
+		/**System.out.println(args[0]);
 		
 		if(args[0].equals("10")){
 			for(int i = 0; i < Integer.parseInt(args[0]); i++) {
@@ -31,9 +32,37 @@ public class Flux {
 				f.createNewFile();
 				System.out.println(f.getAbsolutePath());
 			}
+		}**/
+		
+		String[] tab = new String[4];
+		BufferedReader bufferedReader = new BufferedReader(new FileReader("doublons.txt"));
+		String line;
+		int a = 0;
+		for (int i = 0; i < tab.length; i++) {
+			tab[i] = "";
+		}
+		while((line = bufferedReader.readLine()) != null) {
+			for(int i = 0; i < tab.length; i++) {
+				if(tab[i].equals(line)){
+					break;
+				}
+				else {
+					tab[a] = line;
+					a++;
+					break;
+				}
+			}
+			if(a >= 4) {
+				a =0;
+			}
 		}
 		
-		
+		FileOutputStream output = new FileOutputStream("doublons.txt", true);
+		for(int i = 0; i < tab.length; i++) {
+			byte[] c = tab[i].getBytes();
+			output.write(c);
+		}
+		output.close();
 		
 	}
 	
